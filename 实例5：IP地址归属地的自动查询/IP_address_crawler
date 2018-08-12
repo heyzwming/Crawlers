@@ -1,0 +1,23 @@
+# IP地址归属地查询：    http://m.ip138.com/ip.asp?ip=ipaddress
+
+import requests
+
+
+def IP_add(url, ip):
+    try:
+        r = requests.get(url + ip)
+        r.raise_for_status()
+        r.encoding = r.apparent_encoding
+        print(r.text)
+    except BaseException:
+        print("fail")
+
+
+def main():
+    url = "http://m.ip138.com/ip.asp?ip="
+    ip = "202.204.80.112"
+    IP_add(url, ip)
+
+
+if __name__ == '__main__':
+    main()
