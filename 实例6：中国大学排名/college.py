@@ -35,6 +35,7 @@ def fillUnivList(ulist, html):
 
 
 def printUnivList(ulist, num):
+    # 中英文对齐问题：采用中文字符的空格填充chr（12288）
     tplt = "{:^10}\t{1:{3}^10}\t{2:^10}"
     print(tplt.format("排名", "学校名称", "总分",chr(12288)))
     for i in range(num):
